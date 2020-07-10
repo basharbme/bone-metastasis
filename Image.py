@@ -4,11 +4,21 @@ import imutils
 from math import sqrt
 
 class Image:
+
+  @staticmethod
+  def read(path, colorSpace='gray'):
+    if colorSpace == 'gray':
+      colorSpace = cv.IMREAD_GRAYSCALE
+    return cv.imread(path, colorSpace)
+
   def __init__(self, pixelsData, name):
     self.__img = pixelsData
     self.__name = name
     self.__contours = None
     self.__colorSpace = 'bgr'
+
+  def getImage(self):
+    return self.__img
 
   def show(self):
     cv.imshow(self.__name, self.__img)
@@ -16,6 +26,9 @@ class Image:
 
   def drawCircle(self, center, radious=1, color=(0, 255, 0), thickness=2):
     cv.circle(self.__img, center, radious, color, thickness)
+
+  def drawPolylines(self, pts, color=(0, 255, 0), thickness=2):
+    cv.polylines(self.__img, [np.int32(pts)], True, color, thickness)
 
   def drawContours(self, contours, color=(0, 255, 0), thickness=2):
     cv.drawContours(self.__img, contours, -1, color, thickness)
@@ -127,3 +140,38 @@ class Image:
       # Append features
       contoursFeatures.append(features)
     return contoursFeatures
+
+  def findInstance(self, queryImage, minBestMatches=10):
+    # Feature detection
+    sift = cv.xfeatures2d.SIFT_create()
+    kpQuery, descQuery = sift.detectAndCompute(queryImage.getImage())
+    kpTrain, descTrain = sift.detectAndCompute(self.__img)
+
+    # Feature matching
+    flann = cv.FlannBasedMatcher(dict(algorithm=0, trees=5), dict())
+    matches = flann.knnMatch(descQuery, descTrain, k=2)
+
+    bestMatches = []
+    for m, n in matches:
+      if m.distance < 0.6 * n.distance:
+        bestMatches.append(m)
+
+    # Homography
+    if len(bestMatches >= minBestMatches):
+      queryPoints = np.float32(
+          [kpQuery[m.queryIndex].pt for m in bestMatches]).reshape(-1, 1, 2)
+      trainPoints = np.float32(
+          [kpQuery[m.trainIndex].pt for m in bestMatches]).reshape(-1, 1, 2)
+
+      matrix, mask = cv.findHomography(
+          queryPoints, trainPoints, cv.RANSAC, 5.0)
+      maskMatches = mask.ravel().tolist()
+
+      # Perspective transform
+      h, w = self.__img.shape
+      pts = np.float32([[0, 0], [0, h], [w, h], [w, 0]]).reshape(-1, 1, 2)
+      dest = cv.perspectiveTransform(pts, matrix)
+
+      return dest
+
+    return None

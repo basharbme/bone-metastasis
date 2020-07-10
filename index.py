@@ -4,6 +4,12 @@ from os import listdir
 from os.path import isfile, join
 from Image import Image
 
+# Initialize instances data
+craniumBySide = Image(Image.read(
+    './bonePartsInstances/cranium.png', 'gray'), 'cranium')
+rightLeg = Image(Image.read(
+    './bonePartsInstances/rightLeg.png', 'gray'), 'rightLeg')
+
 
 # Here it comes!
 path = "./datasets/"
@@ -40,10 +46,18 @@ for filename in dcmFiles:
   metastasisImg.morphOperations(2, 'OPEN')
   metastasisImg.morphOperations(10, 'CLOSE')
 
+  instancePts = boneImg.findInstance(craniumBySide, 5)
+  boneImg.gray2bgr()
+  if instancePts != None:
+    boneImg.drawPolylines(instancePts)
+  else:
+    print('No instance found :(')
+
   metastasisImg.findCountours(1)
   features = metastasisImg.findContoursFeatures()
 
   # Here we split the bone image into bone parts, so we can discover witch one of them is suffering from metastasis
+  # In this code, we are using instance detection using SIFT and homography or template matching by Normalized cross correlation
 
   metastasisImg.gray2bgr()
   for i in range(0, len(features)):  # Iterate over detected metastasis
@@ -51,5 +65,5 @@ for filename in dcmFiles:
     metastasisImg.drawCircle(features[i]['centroid'])
     metastasisImg.drawContours([features[i]['convexHull']])
 
-  boneImg.show()
-  metastasisImg.show()
+  # boneImg.show()
+  # metastasisImg.show()
