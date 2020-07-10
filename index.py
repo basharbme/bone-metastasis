@@ -27,11 +27,11 @@ for filename in dcmFiles:
   boneImg = Image(segmentedBGR, "Bone")
   metastasisImg = Image(segmentedBGR, "Metastasis")
 
-  boneImg.BGR2HSV()
-  boneImg.filterByHSV((100, 50, 0), (130, 255, 255))
+  boneImg.bgr2hsv()
+  boneImg.filterByHSV((100, 50, 0), (130, 255, 255))  # Image becomes gray!
 
-  metastasisImg.BGR2HSV()
-  metastasisImg.filterByHSV((0, 60, 0), (10, 255, 255))
+  metastasisImg.bgr2hsv()
+  metastasisImg.filterByHSV((0, 60, 0), (10, 255, 255))  # Image becomes gray!
 
   # Perform some morph operations
   boneImg.morphOperations(2, 'OPEN')
@@ -39,6 +39,17 @@ for filename in dcmFiles:
 
   metastasisImg.morphOperations(2, 'OPEN')
   metastasisImg.morphOperations(10, 'CLOSE')
+
+  metastasisImg.findCountours(1)
+  features = metastasisImg.findContoursFeatures()
+
+  # Here we split the bone image into bone parts, so we can discover witch one of them is suffering from metastasis
+
+  metastasisImg.gray2bgr()
+  for i in range(0, len(features)):  # Iterate over detected metastasis
+    # Draw centroid and approximate convex hull for each one of them
+    metastasisImg.drawCircle(features[i]['centroid'])
+    metastasisImg.drawContours([features[i]['convexHull']])
 
   boneImg.show()
   metastasisImg.show()
