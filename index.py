@@ -42,6 +42,8 @@ for filename in dcmFiles:
   boneImg = Image(segmentedBGR, "Bone")
   metastasisImg = Image(segmentedBGR, "Metastasis")
 
+  defaultImage = Image(segmentedBGR, 'default')
+
   boneImg.bgr2hsv()
   boneImg.filterByHSV((100, 50, 0), (130, 255, 255))  # Image becomes gray!
 
@@ -89,13 +91,13 @@ for filename in dcmFiles:
     if waistRect != None:
       availableBoneParts.append(dict(name=waist.getName(), polygon=waistRect))
 
-  boneImg.gray2bgr()
+  # boneImg.gray2bgr()
 
-  boneImg.drawPolylines(craniumBySideRect)
-  boneImg.drawPolylines(legsRect)
-  boneImg.drawPolylines(armRect)
-  boneImg.drawPolylines(chestRect)
-  boneImg.drawPolylines(waistRect)
+  defaultImage.drawPolylines(craniumBySideRect)
+  defaultImage.drawPolylines(legsRect)
+  defaultImage.drawPolylines(armRect)
+  defaultImage.drawPolylines(chestRect)
+  defaultImage.drawPolylines(waistRect)
 
   metastasisImg.gray2bgr()
   for i in range(0, len(features)):  # Iterate over detected metastasis
@@ -107,13 +109,14 @@ for filename in dcmFiles:
         features[i]['area']) + ' located at ')
     for bonePart in availableBoneParts:
       if isPointsInsidePolygon(features[i]['convexHull'], bonePart['polygon']).all():
-        results.write(' ' + bonePart['name'])
+        results.write(bonePart['name'])
         isInside = True
     if isInside == False:
-      results.write(' Unknown location')
+      results.write('unknown location')
     results.write('\n')
 
-  boneImg.show()
+  defaultImage.show()
+  # boneImg.show()
   # metastasisImg.show()
 
 results.close()
