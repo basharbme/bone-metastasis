@@ -3,12 +3,19 @@ from Dicom import Dicom
 from os import listdir
 from os.path import isfile, join
 from Image import Image
+from geometry import isPointsInsidePolygon
 
 # Initialize instances data
 craniumBySide = Image(Image.read(
     './bonePartsInstances/cranium.png', 'gray'), 'cranium')
-rightLeg = Image(Image.read(
-    './bonePartsInstances/rightLeg.png', 'gray'), 'rightLeg')
+leg = Image(Image.read(
+    './bonePartsInstances/rightLeg.png', 'gray'), 'leg')
+chest = Image(Image.read(
+    './bonePartsInstances/chest.png', 'gray'), 'chest')
+arm = Image(Image.read(
+    './bonePartsInstances/rightArm.png', 'gray'), 'arm')
+waist = Image(Image.read(
+    './bonePartsInstances/waist.png', 'gray'), 'waist')
 
 
 # Here it comes!
@@ -21,10 +28,12 @@ while i < len(dirFiles):
     dcmFiles.append(dirFiles[i])
   i = i + 1
 
+results = open("./results.txt", "a")
+
 for filename in dcmFiles:
 
   ds = Dicom(path+filename, False)
-
+  results.write(str(ds.getPatientId()) + ':\n')
   # Filter by Hounsfield units (HU)
 
   segmentedBGR = ds.getSegmentedBGR([
@@ -46,24 +55,65 @@ for filename in dcmFiles:
   metastasisImg.morphOperations(2, 'OPEN')
   metastasisImg.morphOperations(10, 'CLOSE')
 
-  instancePts = boneImg.findInstance(craniumBySide, 5)
-  boneImg.gray2bgr()
-  if instancePts != None:
-    boneImg.drawPolylines(instancePts)
-  else:
-    print('No instance found :(')
+  craniumBySideRect = boneImg.templateMatch(craniumBySide)
+  legRect = boneImg.templateMatch(leg)
 
   metastasisImg.findCountours(1)
   features = metastasisImg.findContoursFeatures()
 
-  # Here we split the bone image into bone parts, so we can discover witch one of them is suffering from metastasis
-  # In this code, we are using instance detection using SIFT and homography or template matching by Normalized cross correlation
+  availableBoneParts = []
+  if len(features) > 0:
+    # Here we split the bone image into bone parts, so we can discover witch one of them is suffering from metastasis
+    # In this code, we are using instance detection using SIFT and homography or template matching by Normalized cross correlation
+
+    craniumBySideRect = boneImg.templateMatch(craniumBySide)
+    if craniumBySideRect != None:
+      availableBoneParts.append(
+          dict(name=craniumBySide.getName(), polygon=craniumBySideRect))
+
+    legRect = boneImg.templateMatch(leg)
+    if legRect != None:
+      availableBoneParts.append(
+          dict(name=leg.getName(), polygon=legRect))
+
+    armRect = boneImg.templateMatch(arm)
+    if armRect != None:
+      availableBoneParts.append(
+          dict(name=arm.getName(), polygon=armRect))
+
+    chestRect = boneImg.templateMatch(chest)
+    if chestRect != None:
+      availableBoneParts.append(dict(name=chest.getName(), polygon=chestRect))
+
+    waistRect = boneImg.templateMatch(waist)
+    if waistRect != None:
+      availableBoneParts.append(dict(name=waist.getName(), polygon=waistRect))
+
+  boneImg.gray2bgr()
+
+  boneImg.drawPolylines(craniumBySideRect)
+  boneImg.drawPolylines(legRect)
+  boneImg.drawPolylines(armRect)
+  boneImg.drawPolylines(chestRect)
+  boneImg.drawPolylines(waistRect)
 
   metastasisImg.gray2bgr()
   for i in range(0, len(features)):  # Iterate over detected metastasis
     # Draw centroid and approximate convex hull for each one of them
     metastasisImg.drawCircle(features[i]['centroid'])
     metastasisImg.drawContours([features[i]['convexHull']])
+    isInside = False
+    results.write('Detected metastasis of size ' + str(
+        features[i]['area']) + ' located at ')
+    for bonePart in availableBoneParts:
+      if isPointsInsidePolygon(features[i]['convexHull'], bonePart['polygon']).all():
+        results.write(' ' + bonePart['name'])
+        isInside = True
+    if isInside == False:
+      results.write(' Unknown location')
+    results.write('\n')
 
-  # boneImg.show()
+  boneImg.show()
   # metastasisImg.show()
+
+results.close()

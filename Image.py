@@ -17,6 +17,9 @@ class Image:
     self.__contours = None
     self.__colorSpace = 'bgr'
 
+  def getName(self):
+    return self.__name
+
   def getImage(self):
     return self.__img
 
@@ -28,6 +31,8 @@ class Image:
     cv.circle(self.__img, center, radious, color, thickness)
 
   def drawPolylines(self, pts, color=(0, 255, 0), thickness=2):
+    if pts == None:
+      return
     cv.polylines(self.__img, [np.int32(pts)], True, color, thickness)
 
   def drawContours(self, contours, color=(0, 255, 0), thickness=2):
@@ -141,9 +146,20 @@ class Image:
       contoursFeatures.append(features)
     return contoursFeatures
 
-  def findInstance(self, queryImage, minBestMatches=10):
+  def templateMatch(self, queryImage, threshold=0):
+    template = queryImage.getImage()
+    w, h = template.shape[::-1]
+    res = cv.matchTemplate(self.__img, template, cv.TM_CCOEFF_NORMED)
+    min_val, max_val, min_loc, max_loc = cv.minMaxLoc(res)
+    if (max_val > threshold):
+      top_left = max_loc
+      bottom_right = (top_left[0] + w, top_left[1] + h)
+      return [[top_left[0], top_left[1] + h], top_left, [top_left[0] + w, top_left[1]], bottom_right]
+    return None
+
+  def findInstance(self, queryImage, minBestMatches=10, threshold=0.6):
     # Feature detection
-    sift = cv.xfeatures2d.SIFT_create()
+    sift = cv.xfeatures2d.SURF_create(1000)
     kpQuery, descQuery = sift.detectAndCompute(queryImage.getImage())
     kpTrain, descTrain = sift.detectAndCompute(self.__img)
 
@@ -153,11 +169,11 @@ class Image:
 
     bestMatches = []
     for m, n in matches:
-      if m.distance < 0.6 * n.distance:
+      if m.distance < threshold * n.distance:
         bestMatches.append(m)
 
     # Homography
-    if len(bestMatches >= minBestMatches):
+    if len(bestMatches) >= minBestMatches:
       queryPoints = np.float32(
           [kpQuery[m.queryIndex].pt for m in bestMatches]).reshape(-1, 1, 2)
       trainPoints = np.float32(

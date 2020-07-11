@@ -39,6 +39,9 @@ class Dicom:
   def getPixelsArray(self):
     return self.__pixelArray
 
+  def getPatientId(self):
+    return self.__patientId
+
   def getSegmentedBGR(self, intervals):
     image = np.zeros((self.__rows, self.__cols, 3), np.uint8)
     for i in range(self.__rows):
