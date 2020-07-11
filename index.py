@@ -8,8 +8,8 @@ from geometry import isPointsInsidePolygon
 # Initialize instances data
 craniumBySide = Image(Image.read(
     './bonePartsInstances/cranium.png', 'gray'), 'cranium')
-leg = Image(Image.read(
-    './bonePartsInstances/rightLeg.png', 'gray'), 'leg')
+legs = Image(Image.read(
+    './bonePartsInstances/legs.png', 'gray'), 'legs')
 chest = Image(Image.read(
     './bonePartsInstances/chest.png', 'gray'), 'chest')
 arm = Image(Image.read(
@@ -56,7 +56,7 @@ for filename in dcmFiles:
   metastasisImg.morphOperations(10, 'CLOSE')
 
   craniumBySideRect = boneImg.templateMatch(craniumBySide)
-  legRect = boneImg.templateMatch(leg)
+  legsRect = boneImg.templateMatch(legs)
 
   metastasisImg.findCountours(1)
   features = metastasisImg.findContoursFeatures()
@@ -71,10 +71,10 @@ for filename in dcmFiles:
       availableBoneParts.append(
           dict(name=craniumBySide.getName(), polygon=craniumBySideRect))
 
-    legRect = boneImg.templateMatch(leg)
-    if legRect != None:
+    legsRect = boneImg.templateMatch(legs)
+    if legsRect != None:
       availableBoneParts.append(
-          dict(name=leg.getName(), polygon=legRect))
+          dict(name=legs.getName(), polygon=legsRect))
 
     armRect = boneImg.templateMatch(arm)
     if armRect != None:
@@ -92,7 +92,7 @@ for filename in dcmFiles:
   boneImg.gray2bgr()
 
   boneImg.drawPolylines(craniumBySideRect)
-  boneImg.drawPolylines(legRect)
+  boneImg.drawPolylines(legsRect)
   boneImg.drawPolylines(armRect)
   boneImg.drawPolylines(chestRect)
   boneImg.drawPolylines(waistRect)

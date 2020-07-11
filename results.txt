@@ -7,3 +7,221 @@ Detected metastasis of size 16.5 located at  Unknown location
 Detected metastasis of size 11.0 located at  waist
 Detected metastasis of size 1.5 located at  Unknown location
 Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  Unknown location
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  arm
+Detected metastasis of size 11.0 located at  Unknown location
+Detected metastasis of size 1.5 located at  arm
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  Unknown location
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  arm
+Detected metastasis of size 11.0 located at  Unknown location
+Detected metastasis of size 1.5 located at  arm
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  Unknown location
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  arm
+Detected metastasis of size 11.0 located at  Unknown location
+Detected metastasis of size 1.5 located at  arm
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  leg waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest waist
+Detected metastasis of size 16.5 located at  arm
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  arm
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest waist
+Detected metastasis of size 16.5 located at  arm
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  arm
+Paciente5:
+Paciente4:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest waist
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest waist
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest waist
+Detected metastasis of size 16.5 located at  Unknown location
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  Unknown location
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest waist
+Detected metastasis of size 16.5 located at  leftArm
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  leftArm
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest waist
+Detected metastasis of size 16.5 located at  leftArm
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  leftArm
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest waist
+Detected metastasis of size 16.5 located at  arm
+Detected metastasis of size 11.0 located at  waist
+Detected metastasis of size 1.5 located at  arm
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  legs waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  legs chest waist
+Detected metastasis of size 16.5 located at  arm
+Detected metastasis of size 11.0 located at  legs waist
+Detected metastasis of size 1.5 located at  arm
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest waist
+Detected metastasis of size 16.5 located at  arm
+Detected metastasis of size 11.0 located at  legs waist
+Detected metastasis of size 1.5 located at  arm
+Paciente5:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest waist
+Detected metastasis of size 16.5 located at  arm
+Detected metastasis of size 11.0 located at  legs waist
+Detected metastasis of size 1.5 located at  arm
+Paciente5:
+Paciente4:
+Paciente4:
+Detected metastasis of size 408.0 located at  waist
+Detected metastasis of size 90.0 located at  cranium
+Detected metastasis of size 55.5 located at  Unknown location
+Detected metastasis of size 26.0 located at  chest waist
+Detected metastasis of size 16.5 located at  arm
+Detected metastasis of size 11.0 located at  legs waist
+Detected metastasis of size 1.5 located at  arm
+Paciente5:
