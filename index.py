@@ -37,7 +37,7 @@ for filename in dcmFiles:
   # Filter by Hounsfield units (HU)
 
   segmentedBGR = ds.getSegmentedBGR([
-      [7, 100, (255, 0, 0)], [50, 200, (0, 0, 255)]])
+      [7, 100, (255, 0, 0)], [50, 300, (0, 0, 255)]])
 
   boneImg = Image(segmentedBGR, "Bone")
   metastasisImg = Image(segmentedBGR, "Metastasis")
@@ -63,41 +63,56 @@ for filename in dcmFiles:
   metastasisImg.findCountours(1)
   features = metastasisImg.findContoursFeatures()
 
+  if len(features) == 0:
+    results.write('We did not detected any metastasis\n')
+
   availableBoneParts = []
-  if len(features) > 0:
-    # Here we split the bone image into bone parts, so we can discover witch one of them is suffering from metastasis
-    # In this code, we are using instance detection using SIFT and homography or template matching by Normalized cross correlation
 
-    craniumBySideRect = boneImg.templateMatch(craniumBySide)
-    if craniumBySideRect != None:
-      availableBoneParts.append(
-          dict(name=craniumBySide.getName(), polygon=craniumBySideRect))
+  # Here we split the bone image into bone parts, so we can discover witch one of them is suffering from metastasis
+  # In this code, we are using instance detection using SIFT and homography or template matching by Normalized cross correlation
 
-    legsRect = boneImg.templateMatch(legs)
-    if legsRect != None:
-      availableBoneParts.append(
-          dict(name=legs.getName(), polygon=legsRect))
+  craniumBySideRect = boneImg.templateMatch(craniumBySide)
+  if craniumBySideRect != None:
+    availableBoneParts.append(
+        dict(name=craniumBySide.getName(), polygon=craniumBySideRect))
 
-    armRect = boneImg.templateMatch(arm)
-    if armRect != None:
-      availableBoneParts.append(
-          dict(name=arm.getName(), polygon=armRect))
+  chestRect = boneImg.templateMatch(chest)
+  if chestRect != None:
+    availableBoneParts.append(dict(name=chest.getName(), polygon=chestRect))
 
-    chestRect = boneImg.templateMatch(chest)
-    if chestRect != None:
-      availableBoneParts.append(dict(name=chest.getName(), polygon=chestRect))
+  rightArmRect = boneImg.templateMatch(arm)
+  if rightArmRect != None and chestRect != None:
+    rightArm_bottom_left, rightArm_top_left, rightArm_top_right, rightArm_bottom_right = rightArmRect
+    chest_bottom_left, chest_top_left, chest_top_right, chest_bottom_right = chestRect
+    w = rightArm_top_right[0] - rightArm_top_left[0]
+    leftArmRect = [[chest_bottom_right[0], rightArm_bottom_left[1]], [chest_top_right[0], rightArm_top_left[1]], [chest_top_right[0] + w, rightArm_top_right[1]], [
+        chest_bottom_right[0] + w, rightArm_bottom_right[1]]]
+    availableBoneParts.append(
+        dict(name='rightArm', polygon=rightArmRect))
+    availableBoneParts.append(
+        dict(name='leftArm', polygon=leftArmRect))
 
-    waistRect = boneImg.templateMatch(waist)
-    if waistRect != None:
-      availableBoneParts.append(dict(name=waist.getName(), polygon=waistRect))
+  waistRect = boneImg.templateMatch(waist)
+  if waistRect != None:
+    availableBoneParts.append(dict(name=waist.getName(), polygon=waistRect))
 
-  # boneImg.gray2bgr()
+  legsRect = boneImg.templateMatch(legs)
+  if legsRect != None:
+    bottom_left, top_left, top_right, bottom_right = legsRect
+    halfSize = (top_right[0] - top_left[0])/2
+    rightLegRect = [bottom_left, top_left, [top_left[0] + halfSize,
+                                            top_right[1]], [bottom_left[0] + halfSize, bottom_right[1]]]
+    leftLegRect = [[bottom_left[0] + halfSize, bottom_left[1]],
+                   [top_left[0] + halfSize, top_left[1]], top_right, bottom_right]
+    availableBoneParts.append(
+        dict(name='rightLeg', polygon=rightLegRect))
+    availableBoneParts.append(
+        dict(name='leftLeg', polygon=leftLegRect))
 
-  defaultImage.drawPolylines(craniumBySideRect)
-  defaultImage.drawPolylines(legsRect)
-  defaultImage.drawPolylines(armRect)
-  defaultImage.drawPolylines(chestRect)
-  defaultImage.drawPolylines(waistRect)
+  for bonePart in availableBoneParts:
+    defaultImage.drawText(
+        bonePart['name'], int(bonePart['polygon'][0][0]), int(bonePart['polygon'][0][1] - 20), (0, 255, 0), 2, 0.6)
+    defaultImage.drawPolylines(bonePart['polygon'])
 
   metastasisImg.gray2bgr()
   for i in range(0, len(features)):  # Iterate over detected metastasis
@@ -109,11 +124,12 @@ for filename in dcmFiles:
         features[i]['area']) + ' located at ')
     for bonePart in availableBoneParts:
       if isPointsInsidePolygon(features[i]['convexHull'], bonePart['polygon']).all():
-        results.write(bonePart['name'])
+        results.write(bonePart['name'] + ' ')
         isInside = True
     if isInside == False:
       results.write('unknown location')
-    results.write('\n')
+    results.write('(' + str(features[i]['centroid'][0]) +
+                  ',' + str(features[i]['centroid'][1]) + ')' + '\n')
 
   defaultImage.show()
   # boneImg.show()

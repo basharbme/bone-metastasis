@@ -1,9 +1,193 @@
 Paciente4:
-Detected metastasis of size 408.0 located at waist
-Detected metastasis of size 90.0 located at cranium
-Detected metastasis of size 55.5 located at unknown location
-Detected metastasis of size 26.0 located at chestwaist
-Detected metastasis of size 16.5 located at arm
-Detected metastasis of size 11.0 located at legswaist
-Detected metastasis of size 1.5 located at arm
+Detected metastasis of size 408.0 located at waist (127,432)
+Detected metastasis of size 90.0 located at cranium (110,152)
+Detected metastasis of size 55.5 located at leftArm (222,434)
+Detected metastasis of size 26.0 located at chest waist (132,368)
+Detected metastasis of size 16.5 located at rightArm (32,467)
+Detected metastasis of size 11.0 located at waist leftLeg (162,442)
+Detected metastasis of size 1.5 located at rightArm (30,440)
+Paciente1:
+Detected metastasis of size 262.0 located at waist (123,455)
+Detected metastasis of size 40.0 located at chest (130,260)
+Detected metastasis of size 32.0 located at chest (125,308)
+Detected metastasis of size 5.0 located at chest waist (124,388)
+Detected metastasis of size 1.5 located at waist (119,402)
 Paciente5:
+We did not detected any metastasis
+Paciente2:
+Detected metastasis of size 44.5 located at waist (132,469)
+Paciente4:
+Detected metastasis of size 408.0 located at waist (127,432)
+Detected metastasis of size 90.0 located at cranium (110,152)
+Detected metastasis of size 55.5 located at leftArm (222,434)
+Detected metastasis of size 26.0 located at chest waist (132,368)
+Detected metastasis of size 16.5 located at rightArm (32,467)
+Detected metastasis of size 11.0 located at waist leftLeg (162,442)
+Detected metastasis of size 1.5 located at rightArm (30,440)
+Paciente1:
+Detected metastasis of size 262.0 located at waist (123,455)
+Detected metastasis of size 40.0 located at chest (130,260)
+Detected metastasis of size 32.0 located at chest (125,308)
+Detected metastasis of size 5.0 located at chest waist (124,388)
+Detected metastasis of size 1.5 located at waist (119,402)
+Paciente5:
+We did not detected any metastasis
+Paciente2:
+Detected metastasis of size 44.5 located at waist (132,469)
+Paciente4:
+Detected metastasis of size 408.0 located at waist (127,432)
+Detected metastasis of size 90.0 located at cranium (110,152)
+Detected metastasis of size 55.5 located at leftArm (222,434)
+Detected metastasis of size 26.0 located at chest waist (132,368)
+Detected metastasis of size 16.5 located at rightArm (32,467)
+Detected metastasis of size 11.0 located at waist leftLeg (162,442)
+Detected metastasis of size 1.5 located at rightArm (30,440)
+Paciente1:
+Detected metastasis of size 262.0 located at waist (123,455)
+Detected metastasis of size 40.0 located at chest (130,260)
+Detected metastasis of size 32.0 located at chest (125,308)
+Detected metastasis of size 5.0 located at chest waist (124,388)
+Detected metastasis of size 1.5 located at waist (119,402)
+Paciente5:
+We did not detected any metastasis
+Paciente2:
+Detected metastasis of size 44.5 located at waist (132,469)
+Paciente4:
+Detected metastasis of size 408.0 located at waist (127,432)
+Detected metastasis of size 137.5 located at cranium (108,152)
+Detected metastasis of size 55.5 located at leftArm (222,434)
+Detected metastasis of size 53.0 located at rightArm (29,442)
+Detected metastasis of size 26.0 located at chest waist (132,368)
+Detected metastasis of size 16.5 located at rightArm (32,467)
+Detected metastasis of size 11.0 located at waist leftLeg (162,442)
+Paciente1:
+Detected metastasis of size 262.0 located at waist (123,455)
+Detected metastasis of size 40.0 located at chest (130,260)
+Detected metastasis of size 32.0 located at chest (125,308)
+Detected metastasis of size 5.0 located at chest waist (124,388)
+Detected metastasis of size 1.5 located at waist (119,402)
+Paciente5:
+We did not detected any metastasis
+Paciente2:
+Detected metastasis of size 44.5 located at waist (132,469)
+Paciente4:
+Detected metastasis of size 408.0 located at waist (127,432)
+Detected metastasis of size 137.5 located at cranium (108,152)
+Detected metastasis of size 63.0 located at leftArm (222,434)
+Detected metastasis of size 34.5 located at rightArm (31,466)
+Detected metastasis of size 26.0 located at chest waist (132,368)
+Detected metastasis of size 11.0 located at waist leftLeg (162,442)
+Detected metastasis of size 1.5 located at rightArm (30,441)
+Paciente1:
+Detected metastasis of size 262.0 located at waist (123,455)
+Detected metastasis of size 40.0 located at chest (130,260)
+Detected metastasis of size 32.0 located at chest (125,308)
+Detected metastasis of size 5.0 located at chest waist (124,388)
+Detected metastasis of size 1.5 located at waist (119,402)
+Paciente5:
+We did not detected any metastasis
+Paciente2:
+Detected metastasis of size 44.5 located at waist (132,469)
+Paciente4:
+Detected metastasis of size 408.0 located at waist (127,432)
+Detected metastasis of size 137.5 located at cranium (108,152)
+Detected metastasis of size 63.0 located at leftArm (222,434)
+Detected metastasis of size 34.5 located at rightArm (31,466)
+Detected metastasis of size 26.0 located at chest waist (132,368)
+Detected metastasis of size 11.0 located at waist leftLeg (162,442)
+Detected metastasis of size 1.5 located at rightArm (30,441)
+Paciente1:
+Detected metastasis of size 262.0 located at waist (123,455)
+Detected metastasis of size 40.0 located at chest (130,260)
+Detected metastasis of size 32.0 located at chest (125,308)
+Detected metastasis of size 5.0 located at chest waist (124,388)
+Detected metastasis of size 1.5 located at waist (119,402)
+Paciente5:
+We did not detected any metastasis
+Paciente2:
+Detected metastasis of size 44.5 located at waist (132,469)
+Paciente4:
+Detected metastasis of size 1114.0 located at leftLeg (151,796)
+Detected metastasis of size 640.5 located at rightArm (41,334)
+Detected metastasis of size 439.0 located at leftArm (222,451)
+Detected metastasis of size 408.0 located at waist (127,432)
+Detected metastasis of size 322.5 located at leftArm (223,339)
+Detected metastasis of size 198.0 located at rightArm (29,380)
+Detected metastasis of size 146.0 located at leftArm (223,423)
+Detected metastasis of size 129.0 located at rightArm (30,396)
+Detected metastasis of size 125.5 located at leftLeg (156,755)
+Detected metastasis of size 26.0 located at chest waist (132,368)
+Detected metastasis of size 17.5 located at unknown location(173,511)
+Detected metastasis of size 11.0 located at waist leftLeg (162,442)
+Detected metastasis of size 10.5 located at unknown location(118,651)
+Detected metastasis of size 10.0 located at unknown location(120,175)
+Detected metastasis of size 6.5 located at unknown location(82,431)
+Detected metastasis of size 2.0 located at unknown location(43,478)
+Detected metastasis of size 2.0 located at chest (181,337)
+Detected metastasis of size 2.0 located at unknown location(193,237)
+Detected metastasis of size 1.0 located at chest (92,314)
+Detected metastasis of size 1.0 located at chest (176,211)
+Paciente1:
+Detected metastasis of size 1107.5 located at unknown location(38,501)
+Detected metastasis of size 780.0 located at rightArm (30,374)
+Detected metastasis of size 626.5 located at leftArm (227,366)
+Detected metastasis of size 586.5 located at leftArm (218,487)
+Detected metastasis of size 340.5 located at rightArm (35,334)
+Detected metastasis of size 262.0 located at waist (123,455)
+Detected metastasis of size 155.0 located at rightArm (30,412)
+Detected metastasis of size 40.0 located at chest (130,260)
+Detected metastasis of size 32.0 located at chest (125,308)
+Detected metastasis of size 21.5 located at unknown location(113,219)
+Detected metastasis of size 7.0 located at unknown location(143,581)
+Detected metastasis of size 6.0 located at rightLeg (95,747)
+Detected metastasis of size 5.0 located at chest waist (124,388)
+Detected metastasis of size 4.5 located at unknown location(182,389)
+Detected metastasis of size 4.0 located at leftLeg (156,761)
+Detected metastasis of size 4.0 located at unknown location(79,455)
+Detected metastasis of size 3.0 located at rightLeg (107,734)
+Detected metastasis of size 2.0 located at rightLeg (107,647)
+Detected metastasis of size 2.0 located at unknown location(207,521)
+Detected metastasis of size 1.5 located at waist (119,402)
+Paciente5:
+Detected metastasis of size 1984.0 located at rightLeg (91,607)
+Detected metastasis of size 1806.5 located at rightArm (38,314)
+Detected metastasis of size 1373.5 located at rightLeg (94,775)
+Detected metastasis of size 1334.0 located at leftArm (231,325)
+Detected metastasis of size 987.5 located at leftLeg (182,775)
+Detected metastasis of size 331.0 located at rightArm (46,446)
+Detected metastasis of size 194.0 located at leftLeg (174,584)
+Detected metastasis of size 189.5 located at leftLeg (186,724)
+Detected metastasis of size 187.5 located at rightLeg (87,500)
+Detected metastasis of size 151.5 located at rightLeg (89,687)
+Detected metastasis of size 140.0 located at leftLeg (183,674)
+Detected metastasis of size 20.0 located at unknown location(145,160)
+Detected metastasis of size 10.0 located at unknown location(92,318)
+Detected metastasis of size 6.0 located at chest (85,240)
+Detected metastasis of size 4.5 located at unknown location(183,414)
+Detected metastasis of size 1.0 located at leftLeg (189,632)
+Detected metastasis of size 1.0 located at chest (175,351)
+Detected metastasis of size 1.0 located at chest (88,323)
+Paciente2:
+Detected metastasis of size 2559.5 located at leftLeg (170,647)
+Detected metastasis of size 1771.0 located at leftArm (219,329)
+Detected metastasis of size 1307.5 located at leftLeg (162,809)
+Detected metastasis of size 1125.5 located at rightLeg (103,816)
+Detected metastasis of size 560.5 located at leftArm (227,471)
+Detected metastasis of size 425.5 located at rightArm (40,478)
+Detected metastasis of size 279.0 located at leftLeg (174,586)
+Detected metastasis of size 252.0 located at leftLeg (170,738)
+Detected metastasis of size 242.5 located at rightLeg (91,734)
+Detected metastasis of size 129.0 located at rightLeg (90,713)
+Detected metastasis of size 127.0 located at leftLeg (170,714)
+Detected metastasis of size 107.0 located at rightLeg (96,767)
+Detected metastasis of size 44.5 located at waist (132,469)
+Detected metastasis of size 9.0 located at cranium (152,152)
+Detected metastasis of size 5.5 located at rightLeg (95,656)
+Detected metastasis of size 5.5 located at unknown location(173,330)
+Detected metastasis of size 5.0 located at unknown location(183,469)
+Detected metastasis of size 4.5 located at unknown location(90,486)
+Detected metastasis of size 4.5 located at unknown location(49,257)
+Detected metastasis of size 3.5 located at unknown location(131,518)
+Detected metastasis of size 3.0 located at rightArm (35,374)
+Detected metastasis of size 2.5 located at unknown location(72,308)
+Detected metastasis of size 1.5 located at unknown location(100,213)

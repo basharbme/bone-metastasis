@@ -27,6 +27,9 @@ class Image:
     cv.imshow(self.__name, self.__img)
     cv.waitKey(0)
 
+  def drawText(self, txt, x, y, color=(0, 255, 0), thickness=2, scale=1.0, font=cv.FONT_HERSHEY_SIMPLEX):
+    cv.putText(self.__img, txt, (x, y), font, scale, color, thickness)
+
   def drawCircle(self, center, radious=1, color=(0, 255, 0), thickness=2):
     cv.circle(self.__img, center, radious, color, thickness)
 
