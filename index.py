@@ -78,7 +78,16 @@ for filename in dcmFiles:
 
   chestRect = boneImg.templateMatch(chest)
   if chestRect != None:
-    availableBoneParts.append(dict(name=chest.getName(), polygon=chestRect))
+    bottom_left, top_left, top_right, bottom_right = chestRect
+    halfSize = (top_right[0] - top_left[0])/2
+    rightChestRect = [bottom_left, top_left, [top_left[0] + halfSize,
+                                              top_right[1]], [bottom_left[0] + halfSize, bottom_right[1]]]
+    leftChestRect = [[bottom_left[0] + halfSize, bottom_left[1]],
+                     [top_left[0] + halfSize, top_left[1]], top_right, bottom_right]
+    availableBoneParts.append(
+        dict(name='rightChest', polygon=rightChestRect))
+    availableBoneParts.append(
+        dict(name='leftChest', polygon=leftChestRect))
 
   rightArmRect = boneImg.templateMatch(arm)
   if rightArmRect != None and chestRect != None:
@@ -109,6 +118,7 @@ for filename in dcmFiles:
     availableBoneParts.append(
         dict(name='leftLeg', polygon=leftLegRect))
 
+  # Draw boneParts rects and names to debug
   for bonePart in availableBoneParts:
     defaultImage.drawText(
         bonePart['name'], int(bonePart['polygon'][0][0]), int(bonePart['polygon'][0][1] - 20), (0, 255, 0), 2, 0.6)
@@ -116,13 +126,14 @@ for filename in dcmFiles:
 
   metastasisImg.gray2bgr()
   for i in range(0, len(features)):  # Iterate over detected metastasis
-    # Draw centroid and approximate convex hull for each one of them
+    # Draw centroid and approximate convex hull for each one of them; Export features to results.txt file
     metastasisImg.drawCircle(features[i]['centroid'])
     metastasisImg.drawContours([features[i]['convexHull']])
     isInside = False
     results.write('Detected metastasis of size ' + str(
         features[i]['area']) + ' located at ')
     for bonePart in availableBoneParts:
+      # Check fot bonePart location
       if isPointsInsidePolygon(features[i]['convexHull'], bonePart['polygon']).all():
         results.write(bonePart['name'] + ' ')
         isInside = True
