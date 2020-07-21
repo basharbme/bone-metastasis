@@ -131,7 +131,7 @@ for filename in dcmFiles:
     metastasisImg.drawContours([features[i]['convexHull']])
     isInside = False
     results.write('Detected metastasis of size ' + str(
-        features[i]['area']) + ' located at ')
+        ds.getPixelArea() * features[i]['area']) + ' mm2 located at ')
     for bonePart in availableBoneParts:
       # Check fot bonePart location
       if isPointsInsidePolygon(features[i]['convexHull'], bonePart['polygon']).all():
@@ -144,6 +144,6 @@ for filename in dcmFiles:
 
   defaultImage.show()
   # boneImg.show()
-  # metastasisImg.show()
+  metastasisImg.show()
 
 results.close()

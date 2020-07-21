@@ -27,6 +27,7 @@ def getSegmentedPixelColor(value, intervals):
 class Dicom:
   def __init__(self, src, rescale=True):
     ds = dicom.dcmread(src)
+    self.__pixelArea = ds.PixelSpacing[0] * ds.PixelSpacing[1]
     self.__rows = ds.Rows
     self.__cols = ds.Columns
     self.__patientId = ds.PatientID
@@ -35,6 +36,9 @@ class Dicom:
           ds.pixel_array, self.__rows, self.__cols, ds.RescaleIntercept, ds.RescaleSlope)
     else:
       self.__pixelArray = ds.pixel_array
+
+  def getPixelArea(self):
+    return self.__pixelArea
 
   def getPixelsArray(self):
     return self.__pixelArray
